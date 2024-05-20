@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+}
+
+.game-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    animation: fadeIn 1s ease-out;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 50px); /* Reduced card size */
+    gap: 5px;
+    margin-bottom: 10px;
+    justify-content: center; /* Center-align horizontally */
+    align-items: center; /* Center-align vertically */
+}
+.card {
+    width: 50px; /* Reduced card size */
+    height: 50px; /* Reduced card size */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em; /* Adjusted font size */
+    background-color: #fff;
+    transition: transform 0.3s; /* Adding transition for flipping effect */
+}
+.card.flipped {
+    background-color: #74ebd5;
+    color: #fff;
+    transform: rotateY(180deg); /* Rotate the card on the Y-axis when flipped */
+}
+
+#statusMessage {
+    margin-top: 10px;
+    font-size: 1em; /* Adjusted font size */
+    color: #333;
+}
+
+button {
+    padding: 8px 16px; /* Adjusted button padding */
+    font-size: 14px; /* Adjusted font size */
+    background-color: #74ebd5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #56c8d8;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
